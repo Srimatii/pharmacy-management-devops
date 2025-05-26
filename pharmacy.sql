@@ -74,7 +74,11 @@ INSERT INTO `customers` (`ID`, `NAME`, `CONTACT_NUMBER`, `ADDRESS`, `DOCTOR_NAME
 CREATE TABLE `invoices` (
   `INVOICE_ID` int(11) NOT NULL,
   `NET_TOTAL` double NOT NULL DEFAULT 0,
+<<<<<<< HEAD
   `INVOICE_DATE` date NOT NULL,
+=======
+  `INVOICE_DATE` date NOT NULL DEFAULT current_timestamp(),
+>>>>>>> b5a1a35639609c1c3f5e3785532196554caf1eeb
   `CUSTOMER_ID` int(11) NOT NULL,
   `TOTAL_AMOUNT` double NOT NULL,
   `TOTAL_DISCOUNT` double NOT NULL
@@ -122,7 +126,11 @@ CREATE TABLE `medicines_stock` (
   `ID` int(11) NOT NULL,
   `NAME` varchar(100) COLLATE utf16_bin NOT NULL,
   `BATCH_ID` varchar(20) COLLATE utf16_bin NOT NULL,
+<<<<<<< HEAD
   `EXPIRY_DATE` date NOT NULL,
+=======
+  `EXPIRY_DATE` varchar(10) COLLATE utf16_bin NOT NULL,
+>>>>>>> b5a1a35639609c1c3f5e3785532196554caf1eeb
   `QUANTITY` int(11) NOT NULL,
   `MRP` double NOT NULL,
   `RATE` double NOT NULL
