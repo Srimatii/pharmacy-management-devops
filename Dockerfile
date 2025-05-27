@@ -1,14 +1,16 @@
-# Use an official PHP + Apache image
-FROM php:8.1-apache
+# Use Node.js base image
+FROM node:18
 
-# Copy project files into the container
-COPY . /var/www/html/
+# Set app folder
+WORKDIR /app
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Copy files and install dependencies
+COPY package*.json ./
+RUN npm install
 
-# Set working directory
-WORKDIR /var/www/html/
+# Copy rest of your app
+COPY . .
 
-# Set permissions (optional)
-RUN chown -R www-data:www-data /var/www/html/
+# Tell the app to run
+EXPOSE 3000
+CMD ["npm", "start"]
